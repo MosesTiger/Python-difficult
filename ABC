@@ -1,0 +1,36 @@
+from abc import ABC, abstractmethod
+
+class Swimmer(ABC):
+    @abstractmethod
+    def swim(self):
+        pass
+
+class Player(ABC):
+    @abstractmethod
+    def play(self):
+        pass
+
+class Animal(ABC, Swimmer, Player):
+    pass
+
+class Dog(Animal):
+    def swim(self):
+        print("Dog is swimming")
+
+    def play(self):
+        print("Dog is playing")
+
+class Cat(Animal):
+    def swim(self):
+        print("Cat is swimming")
+
+    def play(self):
+        print("Cat is playing")
+
+dog = Dog()
+cat = Cat()
+
+dog.swim()
+dog.play()
+cat.swim()
+cat.play()
